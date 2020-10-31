@@ -1,0 +1,21 @@
+{
+  "name": "gen-vuex-store",
+  "version": "1.0.0",
+  "description": "This package will create a folder with all files (actions, mutations, getters, states) the Vuex Store needs for a specific component/view.",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "vue",
+    "vuex",
+    "store"
+  ],
+  "author": "Valeria Dolce",
+  "license": "MIT",
+  "bin": {
+    "gen-vuex-store": "./cli.js"
+  }
+}
