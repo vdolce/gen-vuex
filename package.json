@@ -1,5 +1,5 @@
 {
-  "name": "gen-vuex-store",
+  "name": "gen-vuex",
   "version": "1.0.0",
   "description": "This package will create a folder with all files (actions, mutations, getters, states) the Vuex Store needs for a specific component/view.",
   "main": "cli.js",
