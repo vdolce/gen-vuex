@@ -32,17 +32,11 @@ fs.readFile('./templates/storePath.txt', 'utf8', function(err, data) {
                         console.log('\x1b[32m%s\x1b[0m', "Directory " + modulePath + " successfully created.")
                       }
             
-                      // create index.js w/ content from a txt file   
-                    fs.writeFile(modulePath + 'index.js','', (err, file) =>{
+                    // copy index.js file from templates folder (instead of create and fill it)
+                    fs.copyFile('./templates/index.js', modulePath + 'index.js', (err) => {
                         if (err) throw err;
                         console.log('\x1b[32m%s\x1b[0m', 'index.js has been created');
                     });
-            
-                    // open destination file (index.js) for appending
-                    var w = fs.createWriteStream(modulePath + 'index.js', {flags: 'a'});
-                    // open source file (indexStoreContent.txt) for reading
-                    var r = fs.createReadStream('./templates/indexStoreTemplate.txt');      
-                    r.pipe(w);
             
                     // create state, actions, mutations, getters JS files
                     const filesArray = ['state', 'actions', 'mutations', 'getters']
