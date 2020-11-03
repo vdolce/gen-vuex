@@ -25,21 +25,34 @@ if(argvs.length > 2)
 
 // CASE 1 ARGUMENT - Settle just the storePath
 if(argvs.length == 1){
-    var storePath = cleanString(argvs[0]) 
-    fs.writeFile('./templates/storePath.txt', storePath , (error, file) =>{
-        if (error) 
-            throw err;
-        else
-            console.log( '\x1b[32m%s\x1b[0m', "You've settled " + storePath + " as Store path");
-    });
 
-
+    // --show-path option
+    if(argvs[0] == "--show-path"){
+        fs.readFile('./templates/storePath.txt', 'utf8', (err, data) =>{ 
+            if(data == "")
+                console.log( "No store path privided.")
+            else
+                console.log( "The current store path is " + data);
+        })
+    }
+    // set the store path
+    else{
+        var storePath = cleanString(argvs[0])
+        fs.writeFile('./templates/storePath.txt', storePath , (error, file) =>{
+            if (error)
+                throw err;
+            else
+                console.log( '\x1b[32m%s\x1b[0m', "You've settled " + storePath + " as Store path");
+        });
+    }
+    
 }
-// CASE 2 ARGUMENTS w/ -s or --store as second arg - Settle the storePath and initialize store.js
+// CASE 2 ARGUMENTS w/ --store as second arg. Settle the storePath and initialize store.js
 if(argvs.length == 2){
 
     // create also store.js
-    if( argvs[1] == "-s" || argvs[1] == "--store"){
+    if( argvs[1] == "--store"){
+
         var storePath = cleanString(argvs[0]) 
         fs.writeFile('./templates/storePath.txt', storePath , (error, file) =>{
             if (error) 
@@ -52,6 +65,7 @@ if(argvs.length == 2){
                     if (error) 
                         console.log(error)
                     else{
+                        // copy store.js template into the new store
                         fs.copyFile('./templates/store.js', storePath + 'store.js', (err) => {
                             if (err) throw err;
                             console.log('\x1b[32m%s\x1b[0m', 'store.js has been created');
