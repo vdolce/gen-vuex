@@ -17,7 +17,7 @@
   "author": "Valeria Dolce",
   "license": "MIT",
   "bin": {
-    "gen-vuex-init": "./init.js",
-    "gen-vuex-create": "./create.js"
+    "gen-vuex-init": "./bin/init.js",
+    "gen-vuex-create": "./bin/create.js"
   }
 }

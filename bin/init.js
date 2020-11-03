@@ -6,21 +6,24 @@ const [,, ...argvs] = process.argv
 
 let cleanString = (arg)=>{
     // remove single quotes
-    arg.replace(/'/g, "") 
+    var newArg = arg.replace(/'/g, "") 
 
     // add '/' at the end, if needed
-    if(arg.slice(-1) != "/" || arg.slice(-1) != "\\")
-        return arg + "/"
+    if(newArg.slice(-1) != "/" || newArg.slice(-1) != "\\")
+        return newArg + "/"
     else
-        return arg
+        return newArg
 }
 
+// CASE NO ARGUMENTS - ERROR
 if(argvs.length == 0)
     console.error('\x1b[31m%s\x1b[0m', 'Missing the store path')
 
+// CASE MORE THAN 2 ARGUMENTS - ERROR
 if(argvs.length > 2)
     console.error('\x1b[31m%s\x1b[0m', 'Too many arguments')   
 
+// CASE 1 ARGUMENT - Settle just the storePath
 if(argvs.length == 1){
     var storePath = cleanString(argvs[0]) 
     fs.writeFile('./templates/storePath.txt', storePath , (error, file) =>{
@@ -32,6 +35,7 @@ if(argvs.length == 1){
 
 
 }
+// CASE 2 ARGUMENTS w/ -s or --store as second arg - Settle the storePath and initialize store.js
 if(argvs.length == 2){
 
     // create also store.js
@@ -59,8 +63,9 @@ if(argvs.length == 2){
         });
     }
     else{
-        console.error('\x1b[31m%s\x1b[0m', 'Command not found')   
-        console.error('gen-vuex-init <path> -s \t initialize path store & create store.js into <path> location')   
+        console.error('\x1b[31m%s\x1b[0m', 'Unknown option: ' + argvs[1])   
+        console.error('gen-vuex-init <path> \t\t Initialize just the store path')   
+        console.error('gen-vuex-init <path> --store \t Initialize store path & create store.js into <path> location. Option [--store] is equivalent to [-s]' )   
     }
     
 
