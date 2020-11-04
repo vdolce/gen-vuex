@@ -1,5 +1,5 @@
 # gen-vuex
-**npm package** to create all **vuex** store files you need for each component/view of your **Vue** application.
+gen-vues is an **npm package** to create all **vuex** store files you need for each component/view of your **Vue** application.
 
 The **Vue project** must follow the structure inside the 'src/store/' folder as showed below:
 
@@ -24,7 +24,7 @@ src/
     ├── login.Vue
     ├── homepage.Vue
 ```
-This structure is used for a medium dimension Vue project: here an example.
+This structure could be used for a medium dimension Vue project.  
 
 ## Getting started
 
@@ -37,11 +37,12 @@ npm install gen-vuex
 ### Usage
 
 ##### 1. Initialize the store path
-This command sets up the store folder path (e.g. "src/store" following the structure above )
-Use the option [- -store] if store.js doesn't exist and you want to create it.
 ```shell
 gen-vuex-init <storePath> [--store]
 ```
+This command sets up the store folder path (e.g. "src/store" following the structure above )
+Use the option [- -store] if store.js doesn't exist and you want to create it.
+
 
 Here is the store.js template that will be created with the [- - store] option
 ```javascript
@@ -56,19 +57,20 @@ export const store = new Vuex.Store({
 });
 ```
 
-If you've already set up the store path, you can check it with the following command:
+If you've already set up the store path, you can check it out with the following command:
 ```shell
 gen-vuex-init --show-path
 ```
 
 
 ##### 2. Create all Vuex files
-This command will create all Vuex files you need for a specific component into the "storePath/modules" location.
-If the storePath/modules folders don't exist, they will be created.
-Remember, you need to settle the store path before with the gen-vuex-init command
 ```shell
 gen-vuex-create <componentName>
 ```
+This command will create all Vuex files you need for a specific component into the "storePath/modules" location.  
+If the storePath/modules folders don't exist, they will be created.  
+Remember, you need to settle the store path before with the gen-vuex-init command.  
+
 
 For example,
 ```shell
