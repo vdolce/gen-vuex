@@ -1,5 +1,5 @@
 # gen-vuex
-**gen-vuex** is an **npm package** to create all **vuex** store files you need for each component/view of your **Vue** application.
+**gen-vuex** is an **npm package** that helps to create all **vuex** store files you need for each component/view of your **Vue** application.
 
 The **Vue project** must follow the structure inside the 'src/store/' folder as showed below:
 
@@ -67,8 +67,8 @@ gen-vuex-init --show-path
 ```shell
 gen-vuex-create <componentName>
 ```
-This command will create all Vuex files you need for a specific component into the "storePath/modules" location.  
-If the "storePath/modules" folders don't exist, they will be created.  
+This command will create all Vuex files you need for a specific component or view. Files will be created into the a folder named "modules", that will be located into the store path settled before.  
+If the store path folder doesn't exist, it will be created.  
 Remember, you need to settle the store path before with the gen-vuex-init command.  
 
 
