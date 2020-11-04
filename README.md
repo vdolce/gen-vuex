@@ -36,7 +36,7 @@ npm install gen-vuex
 
 ### Usage
 
-##### 1. Initialize the store path
+#### 1. Initialize the store path
 ```shell
 gen-vuex-init <storePath> [--store]
 ```
@@ -63,7 +63,7 @@ gen-vuex-init --show-path
 ```
 
 
-##### 2. Create all Vuex files
+#### 2. Create all Vuex files
 ```shell
 gen-vuex-create <componentName>
 ```
