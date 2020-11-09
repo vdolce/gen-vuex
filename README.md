@@ -1,7 +1,7 @@
 # gen-vuex
 **gen-vuex** is an **npm package** that helps to create all **vuex** store files you need for each component/view of your **Vue** application.
 
-The **Vue project** must follow the structure inside the 'src/store/' folder as showed below:
+The **Vue project** must follow the structure inside the folder 'src/store/' as showed below:
 
 ```text
 src/
@@ -20,7 +20,7 @@ src/
             ├── actions.js
             ├── mutations.js
             ├── getters.js
-├── components/
+├── views/
     ├── login.Vue
     ├── homepage.Vue
 ```
@@ -77,7 +77,7 @@ For example,
 gen-vuex-create login
 ```
 
-will create the loginStore folder and all files inside. 
+will create the folder "loginStore" and all files inside. 
 ```text
 src/
 ├── store/
