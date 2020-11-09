@@ -20,7 +20,7 @@ src/
             ├── actions.js
             ├── mutations.js
             ├── getters.js
-├── components/
+├── views/
     ├── login.Vue
     ├── homepage.Vue
 ```
@@ -84,7 +84,7 @@ src/
     ├── store.js
     ├── modules/
         ├── loginStore
-            ├── index.js    (link all files state, actions, mutations, getters together into store.js)
+            +├── index.js    (link all files state, actions, mutations, getters together into store.js)
             ├── state.js
             ├── actions.js
             ├── mutations.js
