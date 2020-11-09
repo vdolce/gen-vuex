@@ -6,7 +6,7 @@ const [,, ...argvs] = process.argv
 
 var storePath = ""
 // read store path
-fs.readFile('./templates/storePath.txt', 'utf8', function(err, data) {
+fs.readFile('./templates/storePath.txt', 'utf8', (err, data) => {
     if (err) throw err;
     storePath = data.toString()
     
