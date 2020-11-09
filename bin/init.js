@@ -44,7 +44,7 @@ if(argvs.length == 1){
         var storePath = cleanString(argvs[0])
         fs.writeFile('./templates/storePath.txt', storePath , (error, file) =>{
             if (error)
-                throw err;
+                throw error;
             else
                 console.log( '\x1b[32m%s\x1b[0m', "You've settled " + storePath + " as Store path");
         });
@@ -60,7 +60,7 @@ if(argvs.length == 2){
         var storePath = cleanString(argvs[0]) 
         fs.writeFile('./templates/storePath.txt', storePath , (error, file) =>{
             if (error) 
-                throw err;
+                throw error;
             else{
                 console.log( '\x1b[32m%s\x1b[0m', "You've settled " + storePath + " as Store path");
                 
@@ -70,8 +70,8 @@ if(argvs.length == 2){
                         console.log(error)
                     else{
                         // copy store.js template into the new store
-                        fs.copyFile('./templates/store.js', storePath + 'store.js', (err) => {
-                            if (err) throw err;
+                        fs.copyFile('./templates/store.js', storePath + 'store.js', (error) => {
+                            if (error) throw error;
                             console.log('\x1b[32m%s\x1b[0m', 'store.js has been created');
                         });
                     }
