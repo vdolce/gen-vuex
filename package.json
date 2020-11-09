@@ -19,7 +19,7 @@
   "bin": {
     "gen-vuex-init": "./bin/init.js",
     "gen-vuex-create": "./bin/create.js"
-  },  
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/vdolce/gen-vuex"
