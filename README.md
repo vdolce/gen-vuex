@@ -84,7 +84,9 @@ src/
     ├── store.js
     ├── modules/
         ├── loginStore
+            ```diff
             +├── index.js    (link all files state, actions, mutations, getters together into store.js)
+             ```
             ├── state.js
             ├── actions.js
             ├── mutations.js
