@@ -1,6 +1,6 @@
 {
   "name": "gen-vuex",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This package will create a folder with all files (actions, mutations, getters, states) the Vuex Store needs for a specific component/view.",
   "main": "cli.js",
   "scripts": {
