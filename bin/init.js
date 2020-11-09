@@ -29,10 +29,14 @@ if(argvs.length == 1){
     // --show-path option
     if(argvs[0] == "--show-path"){
         fs.readFile('./templates/storePath.txt', 'utf8', (err, data) =>{ 
-            if(data == "")
-                console.log( "No store path privided.")
-            else
-                console.log( "The current store path is " + data);
+            if (err)
+                throw err;
+            else{
+                if(data == "")
+                    console.log( "No store path privided.")
+                else
+                    console.log( "The current store path is " + data);
+            }
         })
     }
     // set the store path
