@@ -28,7 +28,7 @@ if(argvs.length == 1){
 
     // --show-path option
     if(argvs[0] == "--show-path"){
-        fs.readFile('./templates/storePath.txt', 'utf8', (err, data) =>{ 
+        fs.readFile(__dirname + '/templates/storePath.txt', 'utf8', (err, data) =>{ 
             if (err)
                 throw err;
             else{
@@ -42,7 +42,7 @@ if(argvs.length == 1){
     // set the store path
     else{
         var storePath = cleanString(argvs[0])
-        fs.writeFile('./templates/storePath.txt', storePath , (error, file) =>{
+        fs.writeFile(__dirname + '/templates/storePath.txt', storePath , (error, file) =>{
             if (error)
                 throw error;
             else
@@ -58,7 +58,7 @@ if(argvs.length == 2){
     if( argvs[1] == "--store"){
 
         var storePath = cleanString(argvs[0]) 
-        fs.writeFile('./templates/storePath.txt', storePath , (error, file) =>{
+        fs.writeFile(__dirname + '/templates/storePath.txt', storePath , (error, file) =>{
             if (error) 
                 throw error;
             else{
@@ -70,7 +70,7 @@ if(argvs.length == 2){
                         console.log(error)
                     else{
                         // copy store.js template into the new store
-                        fs.copyFile('./templates/store.js', storePath + 'store.js', (error) => {
+                        fs.copyFile(__dirname + '/templates/store.js', storePath + 'store.js', (error) => {
                             if (error) throw error;
                             console.log('\x1b[32m%s\x1b[0m', 'store.js has been created');
                         });
