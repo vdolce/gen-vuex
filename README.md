@@ -1,5 +1,5 @@
 # gen-vuex
-**gen-vuex** is an **npm package** that helps to create all **vuex** store files you need for each component/view of your **Vue** application.
+**gen-vuex** is an **npm package** that helps to create all **vuex** store files (state, actions, mutations, getters) you need for each component/view of your **Vue** application.
 
 The **Vue project** must follow the structure inside the folder 'src/store/' as showed below:
 
