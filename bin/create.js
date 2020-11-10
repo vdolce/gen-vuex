@@ -6,7 +6,7 @@ const [,, ...argvs] = process.argv
 
 var storePath = ""
 // read store path
-fs.readFile(__dirname + '/templates/storePath.txt', 'utf8', (err, data) => {
+fs.readFile(__dirname + '/../../templates/storePath.txt', 'utf8', (err, data) => {
     if (err) throw err;
     storePath = data.toString()
     
@@ -33,7 +33,7 @@ fs.readFile(__dirname + '/templates/storePath.txt', 'utf8', (err, data) => {
                       }
             
                     // copy index.js file from templates folder (instead of create and fill it)
-                    fs.copyFile(__dirname + '/templates/index.js', modulePath + 'index.js', (err) => {
+                    fs.copyFile(__dirname + '/../../templates/index.js', modulePath + 'index.js', (err) => {
                         if (err) throw err;
                         console.log('\x1b[32m%s\x1b[0m', 'index.js has been created');
                     });
